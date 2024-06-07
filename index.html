@@ -30,9 +30,6 @@
         </form>
     </div>
     
-    <audio id="hoverSound">
-        <source src="hover-sound.mp3" type="audio/mpeg">
-    </audio>
     
     <audio id="clickSound">
         <source src="click-sound.mp3" type="audio/mpeg">
@@ -101,16 +98,10 @@
 
         var buttons = document.querySelectorAll('.tab-button, .executor-button');
 
-        var hoverSound = document.getElementById('hoverSound');
 
         var clickSound = document.getElementById('clickSound');
 
         buttons.forEach(function(button) {
-            button.addEventListener('mouseover', function() {
-                hoverSound.currentTime = 0;
-                hoverSound.play();
-            });
-
             button.addEventListener('click', function() {
                 clickSound.currentTime = 0;
                 clickSound.play();
