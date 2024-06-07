@@ -30,6 +30,9 @@
         </form>
     </div>
     
+    <audio id="hoverSound">
+        <source src="hover-sound.mp3" type="audio/mpeg">
+    </audio>
     
     <audio id="clickSound">
         <source src="click-sound.mp3" type="audio/mpeg">
@@ -82,15 +85,17 @@
     <script>
         function toggleMenu() {
             var menu = document.getElementById("menu");
-            if (menu.style.display === "block") {
+            if (window.getComputedStyle(menu).display === "block") {
                 menu.style.display = "none";
             } else {
                 menu.style.display = "block";
             }
         }
+
         var menuButtons = document.querySelectorAll('.menu-button');
         menuButtons.forEach(function(button) {
-            button.addEventListener('click', function() {
+            button.addEventListener('click', function(event) {
+                event.preventDefault(); 
                 var menu = document.getElementById("menu");
                 menu.style.display = "none";
             });
@@ -102,6 +107,7 @@
         var clickSound = document.getElementById('clickSound');
 
         buttons.forEach(function(button) {
+
             button.addEventListener('click', function() {
                 clickSound.currentTime = 0;
                 clickSound.play();
