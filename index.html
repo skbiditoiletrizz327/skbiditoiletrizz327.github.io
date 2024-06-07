@@ -26,11 +26,10 @@
     </div>
     <div id="discord" class="tab-content">
         <form class="center-form">
-            <a href="https://discord.gg/msgabv2t9Q" target="_blank">
-                <button class="discord-button">Join Our Discord Server</button>
-            </a>
+            <button class="discord-button" onclick="openDiscord()">Join Our Discord Server</button>
         </form>
     </div>
+    
     <audio id="hoverSound">
         <source src="hover-sound.mp3" type="audio/mpeg">
     </audio>
@@ -133,13 +132,9 @@
         function randomNumber(min, max) {
             return Math.floor(Math.random() * (max - min + 1)) + min
         }
-
-        const STAR_COUNT = 400
-        let result = ""
-        for(let i = 0; i < STAR_COUNT; i++){
-            result += `${randomNumber(-50, 50)}vw ${randomNumber(-50, 50)}vh ${randomNumber(0, 1)}px ${randomNumber(0, 1)}px #fff,`
+        function openDiscord() {
+            window.open('https://discord.gg/msgabv2t9Q', '_blank');
         }
-        console.log(result.substring(0, result.length - 1))
 
         function generateScript() {
             var owner = document.getElementById("owner").value;
