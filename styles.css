@@ -26,7 +26,6 @@ body {
 .tabs {
     display: flex;
 }
-
 #howto {
     padding: 20px;
     animation: fadeIn 0.5s ease-in-out;
@@ -170,13 +169,11 @@ p {
     transform: translateY(-3px);
 }
 
-/* Add this CSS to style tab contents on mobile */
 .tab-content {
     padding: 20px;
     animation: fadeIn 0.5s ease-in-out;
 }
 
-/* Add this CSS to make the menu toggle button visible on mobile */
 @media screen and (max-width: 768px) {
     .menu-toggle {
         display: block;
