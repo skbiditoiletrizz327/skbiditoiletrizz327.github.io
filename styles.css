@@ -1,0 +1,306 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1f1f1f;
+    padding: 15px 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.tabs {
+    display: flex;
+}
+/* Add this CSS to style the how-to-use content */
+/* Add this CSS to style the how-to-use content */
+#howto {
+    padding: 20px;
+    animation: fadeIn 0.5s ease-in-out;
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+
+#howto a {
+    color: #ff4081;
+    text-decoration: none;
+}
+
+#howto a:hover {
+    text-decoration: underline;
+}
+
+#howto ul {
+    list-style-type: none; /* Remove default list style */
+    padding-left: 0; /* Remove default padding */
+}
+
+#howto li {
+    margin-bottom: 10px; /* Add space between each step */
+}
+
+#howto li::before {
+    content: "\2022"; /* Use bullet point as content */
+    color: #ff4081; /* Set bullet point color */
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em; /* Adjust position of bullet point */
+}
+
+
+.tab-button {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.9em;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.tab-button:hover {
+    background-color: rgba(79, 146, 172);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    transform: translateY(-3px);
+}
+.discord-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%; 
+    margin-top: 20%; 
+}
+
+.discord-button {
+    background-color: #ff4081;
+    border: none;
+    color: #ffffff;
+    padding: 15px 30px; 
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2em; 
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.discord-button:hover {
+    background-color: #ff1c6b;
+    box-shadow: 0 0 10px rgba(255, 64, 129, 0.5);
+    transform: translateY(-3px);
+}
+
+
+.tab-button.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    transform: translateY(-3px);
+}
+
+.tab-content {
+    padding: 20px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+h1 {
+    font-size: 2em;
+    margin-top: 0;
+}
+
+p {
+    font-size: 1.2em;
+}
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #1f1f1f;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.menu-item {
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    transform: translateY(-3px);
+}
+
+/* Add this CSS to style tab contents on mobile */
+.tab-content {
+    padding: 20px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Add this CSS to make the menu toggle button visible on mobile */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .tabs {
+        display: none;
+    }
+
+    .tab-button {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+* {
+    transition: all 0.3s ease-in-out;
+}
+
+form {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    background-color: #121212;
+    color: #ffffff;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #ff4081;
+    border: none;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #ff1c6b;
+    box-shadow: 0 0 10px rgba(255, 64, 129, 0.5);
+    transform: translateY(-3px);
+}
+
+pre {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+#copyButton {
+    margin-top: 10px;
+    display: none;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    border-radius: 5px;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+#copyButton:hover {
+    background-color: #45a049;
+    box-shadow: 0 0 10px rgba(72, 180, 97, 0.5);
+    transform: translateY(-3px);
+}
+
+.executor-list {
+    padding: 0;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.executor-button {
+    background-color: #1f1f1f;
+    color: #ffffff;
+    padding: 15px 40px;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    text-decoration: none; 
+}
+
+.executor-button:hover {
+    background-color: #2f2f2f;
+}

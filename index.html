@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stand Explanation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">Stand</div>
+        <button class="menu-toggle" onclick="toggleMenu()">Menu</button>
+        <div class="tabs">
+            <button class="tab-button" onclick="showTab('discord')">Discord</button>
+            <button class="tab-button" onclick="showTab('generator')">Generator</button>
+            <button class="tab-button" onclick="showTab('executors')">Supported Executors</button>
+            <button class="tab-button" onclick="showTab('howto')">How to Use It</button>
+        </div>
+    </div>
+    <div class="menu" id="menu">
+        <button class="menu-item" onclick="showTab('discord')">Discord</button>
+        <button class="menu-item" onclick="showTab('generator')">Generator</button>
+        <button class="menu-item" onclick="showTab('executors')">Supported Executors</button>
+        <button class="menu-item" onclick="showTab('howto')">How to Use It</button>
+    </div>
+    <div id="discord" class="tab-content">
+        <div class="discord-container">
+            <button class="discord-button" onclick="window.open('https:\\discord.gg/msgabv2t9Q', '_blank')">Join Our Discord Server</button>
+        </div>
+    </div>
+    <audio id="hoverSound">
+        <source src="hover-sound.mp3" type="audio/mpeg">
+    </audio>
+    
+    <audio id="clickSound">
+        <source src="click-sound.mp3" type="audio/mpeg">
+    </audio>
+    <div id="generator" class="tab-content" style="display:none;">
+        <form id="scriptForm">
+            <label for="owner">Owner Username:</label>
+            <input type="text" id="owner" name="owner" required>
+            <button type="button" onclick="generateScript()">Generate Script</button>
+        </form>
+        <pre id="output"></pre>
+        <button id="copyButton" onclick="copyScript()" style="display:none;">Copy Script</button>
+    </div>
+
+    <div id="executors" class="tab-content" style="display:none;">
+        <h1>Supported Executors</h1>
+        <div id="supportedExecutors" class="executor-list">
+            <a href="https://codex.lol/android" target="_blank" class="executor-button">Codex</a>
+            <a href="https://www.vegax.gg/" target="_blank" class="executor-button">Vega x</a>
+            <a href="https://deltaexploits.net/" target="_blank" class="executor-button">Delta</a>
+            <a href="https://spdmteam.com/index" target="_blank" class="executor-button">Arceus x</a>
+            <a   target="_blank" class="executor-button">Any other mobile exploit (except Fluxus)</a>
+        </div>
+        <h1>NOT Supported Executors</h1>
+        <div id="notSupportedExecutors" class="executor-list">
+            <a   target="_blank" class="executor-button">Incognito (shut down)</a>
+            <a   target="_blank" class="executor-button">Fluxus Mobile</a>
+            <a   target="_blank" class="executor-button">Feather</a>
+            <a   target="_blank" class="executor-button">Solara</a>
+        </div>
+    </div>
+    
+    
+    
+    
+
+    <div id="howto" class="tab-content" style="display:none;">
+        <ul>
+            <li>If you want to exploit on PC, you'll have to go to <a href="https://www.mumuplayer.com/index.html" target="_blank">Mumu Player's website</a> and download it.</li>
+            <li>After completely setting it up you will have to choose an executor of your choice in the "Supported executor" tab.</li>
+            <li>Install the apk and basically drop the file into Mumu Player (If you're on mobile you can skip this step and download the executor right away and you won't have to download Mumu Player).</li>
+            <li>Now after you choose your executor you will basically have to join on 2 instances at the same time. (e.g one Roblox instance in Mumu Player and one normal desktop Roblox player instance).</li>
+            <li>(If you want to set it up on mobile I recommend joining on mobile and PC and just basically executing the script on your phone).</li>
+            <li>After you've done that you'll need to execute the stand script you got from the generator tab.</li>
+            <li>NOTE: We will not help you get the Key (from the picked executor) and you will have to do it yourself.</li>
+        </ul>
+    </div>
+    
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+        var menuButtons = document.querySelectorAll('.menu-button');
+        menuButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                var menu = document.getElementById("menu");
+                menu.style.display = "none";
+            });
+        });
+
+        var buttons = document.querySelectorAll('.tab-button, .executor-button');
+
+        var hoverSound = document.getElementById('hoverSound');
+
+        var clickSound = document.getElementById('clickSound');
+
+        buttons.forEach(function(button) {
+            button.addEventListener('mouseover', function() {
+                hoverSound.currentTime = 0;
+                hoverSound.play();
+            });
+
+            button.addEventListener('click', function() {
+                clickSound.currentTime = 0;
+                clickSound.play();
+            });
+        });
+        function showTab(tabName) {
+            var i, tabcontent, tabbuttons;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tabbuttons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabbuttons.length; i++) {
+                tabbuttons[i].className = tabbuttons[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            event.currentTarget.className += " active";
+        }
+        function randomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min
+        }
+
+        const STAR_COUNT = 400
+        let result = ""
+        for(let i = 0; i < STAR_COUNT; i++){
+            result += `${randomNumber(-50, 50)}vw ${randomNumber(-50, 50)}vh ${randomNumber(0, 1)}px ${randomNumber(0, 1)}px #fff,`
+        }
+        console.log(result.substring(0, result.length - 1))
+
+        function generateScript() {
+            var owner = document.getElementById("owner").value;
+            var scriptTemplate = `
+getgenv()._=
+"This script made by xk5ng | If you pay for this script you get scammed, this script is completely free ok https://discord.gg/msgabv2t9Q | https://discord.gg/stando"
+--[[To get started in "OWNER" put the username you want to control and in "STAND" put the StandUsername aka AltUsername.
+
+// Example \\
+
+getgenv().Accounts = {OWNER = 'xk5ng', STAND = "4k7nz"} This is just the example dont put the username here ]]
+
+--\\-- Accounts --//--
+
+getgenv().Accounts = {OWNER = '${owner}', STAND = game.Players.LocalPlayer.Name}
+
+--\\-- Stand-Configuration --//--
+
+getgenv().StandConfig = {
+    --\\-- ! Main ! --//--
+    ['Position'] = 'Back', --Position Of Stand [Back | Left | Right]
+    ['CrewID'] = 32570691, --Must Be In Group For It To Work
+    ['Attack'] = 'Heavy', --Heavy = Super Punch Light = Spam Punch [Heavy | Light]
+    ['StandMode'] = 'TheWorld', --[Star Platinum : OverHeaven | Star Platinum: The World | Star Platinum, Za Warudo! | TheWorld | Cmoon | King Crimson | Killer Queen | MIH | D4C]
+    ['FlyMode'] = 'Glide', --[Glide | FlyV1 | FlyV2 | Hover | Heaven ]
+    ['Pred'] = 0.34, --Prediction For Attack Or Targetting
+    ['AutoPred'] = 0.23, --Prediction For Attack Or Targetting
+    ['GunPred'] = 0.037, --Gun prediction [this is auto prediction sets]
+    ['AutoPredic'] = false, --[true | false] Turn On Or Off Auto Prediction 
+    ['AttackMode'] = 'Sky', --[Sky | Under] If [Sky] The Stand Will Attack Infront Of Target And If [Under] The Stand Will Attack In Underground
+    ['GunMode'] = 'Under', --[Sky | Under]  The Stand Will Shooting Just Like What In The Settings
+    ['GunType'] = 'Lmg', --[Lmg | Aug]  The Stand Will Shooting Just Like What In The Settings
+    ['Resolver'] = false, --[true | false] Turn On Or Off Resolver If Someone Using Anti Lock
+    --\\-- ! Antilock ! --//--
+    ['SkyAmount'] = 1600, --Sky Velocity
+    --\\-- ! Misc ! --//--
+    ['AutoSaveLocation'] = '1', --[1 | 2]. '1' is bank food shop rooftop, '2' is "DA FURNITURE" Rooftop
+    ['AttackDistance'] = 75, --Attack distance for "Attack!, Stab!, Gkill!" max distance
+    ['MutePremium'] = true, --Only for premium (this make ur stand cant be controlled by other premium)
+    ['TPMode'] = "Cart", --[Knock | Cart]
+    ['Smoothing'] = false, --[true | false] If [false] Less Delays And if [true] The Stand Movement Will Smooth But Kinda Delayed
+    ['CustomPrefix'] = '.', --[ ! | / | . | ? | > | < | $ | ; | : ] Custom target prefix
+    ['CustomSummon'] = 'Summon!', --Custom [Summon!] Text
+    ['SummonPoses'] = 'Pose1', --[false | Pose1 | Pose2 | Pose3]
+    ['LowGraphics'] = true, --[true | false] Turns graphics down so your stand doesnt lag too much
+    ['AntiStomp'] = true, --[true | false] The Stand Will Cannot Be Stomped Or Grabbed
+    ['CustomNAME'] = 'Master', --Custom Name Text Default Is [Master] Example Of it 'Im Here, Master'
+    ['Hidescreen'] = false, --[true | false] If [true] You WIll See White Blank Screen But The Performance Is Gonna Be Good]
+    ['ChatCmds'] = true, --[true | false] Chatted When You Use Some Command
+    ['MaskMode'] = 'Breathing', --[Surgeon | Paintball | Skull | Pumpkin | Hockey | Ninja | Riot | Breathing] The Stand Will Buy The Mask You Selected
+    ['AutoMask'] = true, --[true | false] Auto Buy Mask When The Stand Respawn
+    ['FPSCAP'] = false, --[false | 'NUMBER'] This is so your main account gets the most fps (MAXED IS 60, SUGGEST 30 FPS ON STANDS)
+    ['Msg'] = 'Yare Yare Daze.', --When You Say [/e msg] It Makes All The Alts Say That Message
+    ['Alt'] = false, --keep this false
+    --//    ! Sounds !     \\--
+    --\\ MUST HAVE BOOMBOX //--
+    ['Sounds'] = true, --[true | false]
+    ['CustomSong'] = 6703926669, --Enter A Song ID And Say 'Song!'
+    ['SummonMusic'] = true, --[true | false]
+    ['SummonMusicID'] = 'Default' -- Enter a Sound ID Put [Default] If You Would Like The Default Sound
+}
+loadstring(game:HttpGet("https://xk5ng.github.io/V4.6"))()
+            `;
+            document.getElementById("output").textContent = scriptTemplate;
+            document.getElementById("copyButton").style.display = "block";
+        }
+
+        function copyScript() {
+            var copyText = document.getElementById("output");
+            var textArea = document.createElement("textarea");
+            textArea.value = copyText.textContent;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand("Copy");
+            textArea.remove();
+        }
+    </script>
+</body>
+</html>
