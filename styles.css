@@ -26,8 +26,6 @@ body {
 .tabs {
     display: flex;
 }
-/* Add this CSS to style the how-to-use content */
-/* Add this CSS to style the how-to-use content */
 #howto {
     padding: 20px;
     animation: fadeIn 0.5s ease-in-out;
@@ -47,20 +45,20 @@ body {
 }
 
 #howto ul {
-    list-style-type: none; /* Remove default list style */
-    padding-left: 0; /* Remove default padding */
+    list-style-type: none; 
+    padding-left: 0; 
 }
 
 #howto li {
-    margin-bottom: 10px; /* Add space between each step */
+    margin-bottom: 10px; 
 }
 
 #howto li::before {
-    content: "\2022"; /* Use bullet point as content */
-    color: #ff4081; /* Set bullet point color */
+    content: "\2022";
+    color: #ff4081; 
     display: inline-block;
     width: 1em;
-    margin-left: -1em; /* Adjust position of bullet point */
+    margin-left: -1em; 
 }
 
 
