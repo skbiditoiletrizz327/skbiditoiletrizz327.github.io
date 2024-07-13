@@ -1,3 +1,10 @@
+local UserInputService = game:GetService('UserInputService')
+local LocalPlayer = game:GetService('Players').LocalPlayer
+local TweenService = game:GetService('TweenService')
+local HttpService = game:GetService('HttpService')
+local CoreGui = game:GetService('CoreGui')
+
+local Mouse = LocalPlayer:GetMouse()
 local Library = {
 	connections = {};
 	Flags = {};
