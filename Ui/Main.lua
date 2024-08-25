@@ -2623,3 +2623,4 @@ do
 		--
 	end
 end
+return Library,Library.Flags
