@@ -1,5 +1,37 @@
 -- Library
 -- sexy ui lib from starhook
+local function addAsset(filename, assetName)
+    if not isfolder("Legion") then 
+        makefolder("Legion")
+    end 
+    if not isfolder("Legion/Assets") then 
+        makefolder("Legion/Assets")
+    end 
+
+    local path = "Legion/Assets/"..filename..".png"
+    
+    if not isfile(path) then 
+        local assetUrl = "https://getlegion.lol/Ui/Assets/"..assetName..".png"
+        local success, assetData
+
+        success, assetData = pcall(function() 
+            return game:HttpGet(assetUrl)
+        end)
+
+        if not success then
+            error("Failed to connect to asset server: "..assetUrl.." : "..assetData)
+        end
+        
+        writefile(path, assetData)
+    end
+end
+
+local function getAsset(name)
+    local path = "Legion/Assets/"..name..".png"
+    if isfile(path) then 
+        return getcustomasset(path)
+    end 
+end
 
 local Library = {};
 do
@@ -812,7 +844,7 @@ do
 
 			local Logo = Instance.new("ImageLabel")
 			Logo.Name = "Logo"
-			Logo.Image = "http://www.roblox.com/asset/?id=17669613413"
+			Logo.Image = getAsset("Legion")
 			Logo.ScaleType = Enum.ScaleType.Fit
 			Logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			Logo.BackgroundTransparency = 1
