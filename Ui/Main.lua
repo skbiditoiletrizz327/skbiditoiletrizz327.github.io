@@ -12,17 +12,9 @@ local function addAsset(filename, assetName)
     
     if not isfile(path) then 
         local assetUrl = "https://getlegion.lol/Ui/Assets/"..assetName..".png"
-        local success, assetData
-
-        success, assetData = pcall(function() 
-            return game:HttpGet(assetUrl)
-        end)
-
-        if not success then
-            error("Failed to connect to asset server: "..assetUrl.." : "..assetData)
-        end
         
-        writefile(path, assetData)
+        
+        writefile(path, game:HttpGet(assetUrl))
     end
 end
 
