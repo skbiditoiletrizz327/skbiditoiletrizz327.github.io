@@ -768,12 +768,11 @@ do
 			Library.ScreenGUI = ScreenGui
 
 			Shadow.Name = "Shadow"
-			Shadow.Parent = Holder
+			Shadow.Parent = Outline
 			Shadow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			Shadow.BackgroundTransparency = 1.000
 			Shadow.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			Shadow.BorderSizePixel = 0
-			Shadow.Position = UDim2.new(-0.0850000009, 0, -0.13586019, 0)
 			Shadow.Size = UDim2.new(0, 699, 0, 536)
 			Shadow.ZIndex = 20
 			Shadow.Image = "rbxassetid://17290899982"
