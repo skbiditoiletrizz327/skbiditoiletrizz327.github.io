@@ -760,11 +760,24 @@ do
 			local Tabs = Instance.new('Frame', Inline)
 			local UIListLayout = Instance.new('UIListLayout', Tabs)
 			local TextButton = Instance.new('TextButton', Inline)
+			local Shadow = Instance.new("ImageLabel")			
+
 			--
 			ScreenGui.DisplayOrder = 100
 			ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 			ScreenGui.Name = "Legion"
 			Library.ScreenGUI = ScreenGui
+
+			Shadow.Name = "Shadow"
+			Shadow.Parent = Holder
+			Shadow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Shadow.BackgroundTransparency = 1.000
+			Shadow.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Shadow.BorderSizePixel = 0
+			Shadow.Position = UDim2.new(-0.0850000009, 0, -0.13586019, 0)
+			Shadow.Size = Window.Size
+			Shadow.ZIndex = -8
+			Shadow.Image = "rbxassetid://17290899982"
 			--
 			Outline.Name = "Outline"
 			Outline.Position = UDim2.new(0.5,0,0.5,0)
