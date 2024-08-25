@@ -1013,7 +1013,7 @@ do
 			Icon.BorderSizePixel = 0
 			Icon.BorderColor3 = Color3.new(0,0,0)
 			Icon.Image = Page.Icon
-			Icon.ImageColor3 = Color3.fromRGB(120,120,120)
+			Icon.ImageColor3 = Color3.fromRGB(179, 157, 219)
 			--
 			NewPage.Name = "NewPage"
 			NewPage.Position = UDim2.new(0,10,0,60)
