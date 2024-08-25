@@ -760,7 +760,7 @@ do
 			local Tabs = Instance.new('Frame', Inline)
 			local UIListLayout = Instance.new('UIListLayout', Tabs)
 			local TextButton = Instance.new('TextButton', Inline)
-
+			local Shadow = Insance.new("ImageLabel")
 			--
 			ScreenGui.DisplayOrder = 100
 			ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
