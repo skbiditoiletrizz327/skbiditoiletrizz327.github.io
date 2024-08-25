@@ -760,7 +760,6 @@ do
 			local Tabs = Instance.new('Frame', Inline)
 			local UIListLayout = Instance.new('UIListLayout', Tabs)
 			local TextButton = Instance.new('TextButton', Inline)
-			local Shadow = Instance.new("ImageLabel")			
 
 			--
 			ScreenGui.DisplayOrder = 100
@@ -775,8 +774,8 @@ do
 			Shadow.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			Shadow.BorderSizePixel = 0
 			Shadow.Position = UDim2.new(-0.0850000009, 0, -0.13586019, 0)
-			Shadow.Size = Window.Size
-			Shadow.ZIndex = -8
+			Shadow.Size = UDim2.new(0, 699, 0, 536)
+			Shadow.ZIndex = 20
 			Shadow.Image = "rbxassetid://17290899982"
 			--
 			Outline.Name = "Outline"
