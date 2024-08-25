@@ -23,6 +23,11 @@ local function getAsset(name)
     end 
 end
 addAsset("Legion","Legion")
+
+if game.CoreGui:FindFirstChild("Legion") then 
+	game.CoreGui:FindFirstChild("Legion"):Destroy()
+end
+
 local Library = {};
 do
 	Library = {
@@ -758,6 +763,7 @@ do
 			--
 			ScreenGui.DisplayOrder = 100
 			ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+			ScreenGui.Name = "Legion"
 			Library.ScreenGUI = ScreenGui
 			--
 			Outline.Name = "Outline"
