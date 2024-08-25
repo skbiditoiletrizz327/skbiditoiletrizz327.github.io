@@ -32,7 +32,7 @@ local function getAsset(name)
         return getcustomasset(path)
     end 
 end
-
+addAsset("Legion")
 local Library = {};
 do
 	Library = {
