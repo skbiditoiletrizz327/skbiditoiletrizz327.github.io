@@ -2480,6 +2480,7 @@ do
 			NewButton.Text = ""
 			NewButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 			NewButton.TextSize = 14
+			NewButton.TextScaled = true 
 			NewButton.AutoButtonColor = false
 			NewButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			NewButton.BackgroundTransparency = 1
