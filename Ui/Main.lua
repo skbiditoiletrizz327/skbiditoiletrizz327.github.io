@@ -1887,6 +1887,7 @@ do
 					TextButton.AutoButtonColor = false
 					TextButton.Font = Enum.Font.SourceSans
 					TextButton.TextSize = 14
+					TextButton.TextScaled = true 
 					Dropdown.OptionInsts[option].button = TextButton
 					--
 					DropdownTitle3.Name = "DropdownTitle"
