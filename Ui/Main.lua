@@ -12,9 +12,7 @@ local function addAsset(filename, assetName)
     
     if not isfile(path) then 
         local assetUrl = "https://getlegion.lol/Ui/Assets/"..assetName..".png"
-        
-        
-        writefile(path, game:HttpGet(assetUrl))
+        writefile(path, game:HttpGet("https://www.getlegion.lol/Ui/Assets/Legion.png"))
     end
 end
 
@@ -2619,5 +2617,3 @@ do
 		--
 	end
 end
-
-return Library, Library.Flags;
