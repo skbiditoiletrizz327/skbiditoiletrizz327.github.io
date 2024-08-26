@@ -1,6 +1,6 @@
 -- Library
 -- sexy ui lib from starhook
-local function addAsset(filename, assetName)
+local function addAsset(filename)
     if not isfolder("Legion") then 
         makefolder("Legion")
     end 
@@ -11,7 +11,6 @@ local function addAsset(filename, assetName)
     local path = "Legion/Assets/"..filename..".png"
     
     if not isfile(path) then 
-        local assetUrl = "https://getlegion.lol/Ui/Assets/"..assetName..".png"
         writefile(path, game:HttpGet("https://www.getlegion.lol/Ui/Assets/Legion.png"))
     end
 end
@@ -22,7 +21,7 @@ local function getAsset(name)
         return getcustomasset(path)
     end 
 end
-addAsset("Legion","Legion")
+addAsset("Legion")
 
 if game.CoreGui:FindFirstChild("Legion") then 
 	game.CoreGui:FindFirstChild("Legion"):Destroy()
@@ -2453,7 +2452,7 @@ do
 
 			ToggleFrame.Parent = NewBox
 			--
-			DropdownTitle.FocusLost:Connect(function()
+			DropdownTitle.InputEnded:Connect(function()
 				Textbox.Callback(DropdownTitle.Text)
 				Library.Flags[Textbox.Flag] = DropdownTitle.Text
 			end)
