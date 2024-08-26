@@ -2452,7 +2452,7 @@ do
 
 			ToggleFrame.Parent = NewBox
 			--
-			DropdownTitle.InputEnded:Connect(function()
+			DropdownTitle.FocusLost:Connect(function()
 				Textbox.Callback(DropdownTitle.Text)
 				Library.Flags[Textbox.Flag] = DropdownTitle.Text
 			end)
